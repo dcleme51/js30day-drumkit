@@ -23,10 +23,28 @@
 window.addEventListener("keydown", function(e){
 // console.log(e);
 var audio = document.querySelector(`audio[data-key="${e.keyCode}"]`)
-console.log(audio);
+// console.log(audio);
 // this works but not sure why keycode is crossed out and I dont quite understand the $ sign and what it does?
+var key = document.querySelector(`.key[data-key="${e.keyCode}"]`)
+console.log(key);
 if(!audio) return; // stops function from running when a irelavant key is selected.
-audio.currentTime = 0; // why is this function not after you play the audio?
+audio.currentTime  = 0; // why is this function not after you play the audio?
 audio.play();
+
+//trainsion colour of key to pop out
+key.classList.add('playing');
+// setTimeout(function() {
+    
+// }, 0.07); - best practice you wouldnt use this funtion in case another devloper changes the timer in the CSS of the transition period
+function removeTransition(e){
+    // console.log(e);
+if(e.propertyName !== "transform") return;
+// console.log(e.propertyName);
+this.classList.remove("playing");
+}
+
+var keys = document.querySelectorAll(".key");
+key.forEach(key => key.addEventListener('transitonend', removeTransition));
+this.window.addEventListener("keydown", playSound);
 
 });
