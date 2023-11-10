@@ -3,7 +3,7 @@
 
 // When a kbd letter is seletced the js should play an audio.
 //create an array of the letters that we want to target when selcted.
-var drumKey = ["A", "S", "D", "F", "G", "H", "J", "K", "L"];
+var drumKey = ["65", "83", "68", "70", "71", "72", "74", "75", "76"]; //data key to corrspond to audio.
 
 //when one of the keys in the array is pressed an audio will be played. You can use an Event onkeydown to perform the action.
 onkeydown(drumKey) = document.addEventListener{
@@ -17,3 +17,4 @@ audio
 //
 
 // At the same time when key entered and playing an audio the letter in corrspondance should pop up a little with a boarder orenge.
+
